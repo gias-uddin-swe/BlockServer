@@ -5,12 +5,21 @@ require("dotenv").config();
 const MongoClient = require("mongodb").MongoClient;
 const ObjectId = require("mongodb").ObjectId;
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.jqsch.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
+// const uri = `mongodb+srv://testtest:test12345@cluster0.jqsch.mongodb.net/profile?retryWrites=true&w=majority`;
+
+const uri =
+  "mongodb+srv://testtest:test12345@cluster0.udibq.mongodb.net/profile?retryWrites=true&w=majority";
 
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
+// const client = new MongoClient(uri, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
+
 const port = 5000;
 const app = express();
 app.use(cors());
